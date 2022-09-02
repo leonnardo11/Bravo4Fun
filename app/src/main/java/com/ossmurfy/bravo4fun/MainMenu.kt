@@ -18,7 +18,7 @@ class MainMenu : AppCompatActivity() {
             texto.toString().toInt()
             texto.text = resultado.toString()
 
-            
+            x
         }
     }
 }
