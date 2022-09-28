@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundLogin"
+    android:background="@drawable/image_12"
     tools:context=".RegisterActivity">
 
 
@@ -73,13 +73,13 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="32dp"
+        android:hint="Digite sua senha"
         app:boxBackgroundColor="#FAF6F6"
         app:boxBackgroundMode="filled"
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusTopEnd="10dp"
         app:boxCornerRadiusTopStart="10dp"
-        android:hint="Digite sua senha"
         app:endIconMode="password_toggle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -101,13 +101,13 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="32dp"
+        android:hint="Confirme sua senha"
         app:boxBackgroundColor="#FAF6F6"
         app:boxBackgroundMode="filled"
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusTopEnd="10dp"
         app:boxCornerRadiusTopStart="10dp"
-        android:hint="Confirme sua senha"
         app:endIconMode="password_toggle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -122,14 +122,16 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/LoginButton"
-        android:layout_width="99dp"
-        android:layout_height="54dp"
+        android:id="@+id/registerButton"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
-        android:text="Entrar"
-        android:textColor="@color/black"
+        android:layout_marginEnd="32dp"
         android:backgroundTint="@color/backgroundBotaoRosa"
+        android:text="Cadastrar"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RegisterSenhaConfirmar" />
 
@@ -137,14 +139,13 @@
         android:id="@+id/ResgisterPossuiConta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="68dp"
         android:text="Já tenho uma conta"
         android:textAlignment="center"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LoginButton" />
-
+        app:layout_constraintTop_toBottomOf="@+id/registerButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

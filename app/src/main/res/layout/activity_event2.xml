@@ -14,7 +14,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Evento em destaque "
-        android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.071"
@@ -27,7 +26,6 @@
         android:layout_height="91dp"
         android:layout_marginTop="104dp"
         android:text="JOHN WICK"
-        android:textColor="#FFFFFF"
         android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.628"
@@ -41,7 +39,6 @@
         android:layout_marginTop="28dp"
 
         android:text="Cinema São Paulo"
-        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,17 +50,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="19/02/2023"
-        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
     <Button
-        android:id="@+id/buttonHome"
-        android:layout_width="wrap_content"
+        android:id="@+id/button3"
+        android:layout_width="104dp"
         android:layout_height="43dp"
         android:layout_marginTop="24dp"
-        android:text="Ver Mais"
+        android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,9 +70,9 @@
         android:layout_width="123dp"
         android:layout_height="189dp"
         android:layout_marginTop="36dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginEnd="52dp"
         app:layout_constraintEnd_toStartOf="@+id/imageView10"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHome"
+        app:layout_constraintTop_toBottomOf="@+id/button3"
         app:srcCompat="@drawable/poster_o_rei_do_show_tamanho_90x_0_cm_lo00_poster_o_rei_do_show" />
 
     <ImageView
@@ -84,9 +80,9 @@
         android:layout_width="123dp"
         android:layout_height="189dp"
         android:layout_marginTop="36dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHome"
-        app:srcCompat="@drawable/poster_o_rei_do_show_tamanho_90x_0_cm_lo00_poster_o_rei_do_show" />
+        app:layout_constraintTop_toBottomOf="@+id/button3"
+        app:srcCompat="@drawable/poster_o_rei_do_show_tamanho_90x_0_cm_lo00_poster_o_rei_do_show"
+        tools:layout_editor_absoluteX="295dp" />
 
     <ImageView
         android:id="@+id/imageView9"
@@ -94,9 +90,9 @@
         android:layout_height="189dp"
         android:layout_marginTop="36dp"
         app:layout_constraintEnd_toStartOf="@+id/imageView8"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHome"
+        app:layout_constraintTop_toBottomOf="@+id/button3"
         app:srcCompat="@drawable/poster_o_rei_do_show_tamanho_90x_0_cm_lo00_poster_o_rei_do_show" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
