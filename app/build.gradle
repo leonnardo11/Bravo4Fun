@@ -5,7 +5,9 @@ plugins {
 
 android {
     compileSdk 32
-
+    viewBinding{
+        enabled true
+    }
     defaultConfig {
         applicationId "com.ossmurfy.bravo4fun"
         minSdk 23
