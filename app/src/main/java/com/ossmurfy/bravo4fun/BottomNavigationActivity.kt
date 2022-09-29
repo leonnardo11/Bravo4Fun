@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.ossmurfy.bravo4fun.databinding.ActivityBottomNavigationBinding
-import com.ossmurfy.bravo4fun.databinding.ActivityMainMenuBinding
+import com.ossmurfy.bravo4fun.databinding.FragmentMainBinding
 import com.ossmurfy.bravo4fun.fragments.MainFragment
 import com.ossmurfy.bravo4fun.fragments.ProductFragment
 import com.ossmurfy.bravo4fun.fragments.ScannerFragment
@@ -15,7 +15,6 @@ import com.ossmurfy.bravo4fun.fragments.perfilteste
 
 class BottomNavigationActivity : AppCompatActivity() {
     lateinit var binding: ActivityBottomNavigationBinding
-    lateinit var bindingMainMenu: ActivityMainMenuBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,12 +35,10 @@ class BottomNavigationActivity : AppCompatActivity() {
 
                 }
             }
-        bindingMainMenu.buttonHome.setOnClickListener{
-            replaceFragment(ProductFragment())
-        }
 
         true
         }
+
 
 
     }
