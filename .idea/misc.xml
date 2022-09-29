@@ -4,6 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/MaKoTo/StudioProjects/app/src/main/res/layout/activity_about.xml" value="0.36666666666666664" />
+        <entry key="..\:/MaKoTo/StudioProjects/app/src/main/res/layout/activity_carrinho.xml" value="0.36666666666666664" />
+        <entry key="..\:/MaKoTo/StudioProjects/app/src/main/res/layout/activity_cart.xml" value="0.33" />
+        <entry key="..\:/MaKoTo/StudioProjects/app/src/main/res/layout/activity_event2.xml" value="0.36666666666666664" />
         <entry key="..\:/MaKoTo/StudioProjects/app/src/main/res/layout/activity_product.xml" value="0.4069364161849711" />
         <entry key="..\:/MaKoTo/StudioProjects/app/src/main/res/layout/activity_profile.xml" value="0.1661600810536981" />
         <entry key="..\:/MaKoTo/StudioProjects/app/src/main/res/layout/activity_scanner.xml" value="0.36666666666666664" />
