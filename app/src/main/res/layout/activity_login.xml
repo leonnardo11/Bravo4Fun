@@ -57,6 +57,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Digite seu e-mail"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -86,7 +89,10 @@
             style="@style/Theme.AppCompat.Light.NoActionBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword" />
+            android:hint="Digite sua senha"
+            android:inputType="textPassword"
+            android:textColor="#000000"
+            android:textColorHint="#000000" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
