@@ -23,6 +23,33 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".BottomNavigationActivity"
+            android:exported="true"
+            android:label="@string/title_activity_bottom_navigation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".bottomNavigation"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".EventActivity"
             android:exported="true"
             android:label="@string/title_activity_event"
@@ -87,6 +114,16 @@
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.ProductActivity" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.ProfileActivity" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
