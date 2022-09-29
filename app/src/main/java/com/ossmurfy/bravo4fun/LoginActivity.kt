@@ -17,7 +17,7 @@ class LoginActivity : AppCompatActivity() {
         val registerText: TextView = findViewById(R.id.registerText)
 
         loginButton.setOnClickListener{
-            val intent = Intent(this, MainMenu::class.java)
+            val intent = Intent(this, BottomNavigationActivity::class.java)
             startActivity(intent)
         }
 
