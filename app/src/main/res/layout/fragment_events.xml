@@ -21,14 +21,14 @@
 
                 <Button
                     android:id="@+id/button"
-                    android:layout_width="53dp"
-                    android:layout_height="52dp"
+                    android:layout_width="49dp"
+                    android:layout_height="51dp"
                     android:layout_marginEnd="16dp"
                     android:drawableRight="@drawable/lupa"
                     android:visibility="visible"
                     app:iconTint="#FF0000"
                     app:layout_constraintEnd_toEndOf="parent"
-                    tools:layout_editor_absoluteY="0dp" />
+                    tools:layout_editor_absoluteY="1dp" />
 
                 <TextView
                     android:id="@+id/textView"
