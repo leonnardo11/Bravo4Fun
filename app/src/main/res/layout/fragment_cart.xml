@@ -29,7 +29,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:padding="15dp"
-                    android:src="@drawable/ic_launcher_foreground" />
+                    android:src="@drawable/carrinho" />
 
                 <TextView
                     android:id="@+id/titleTextView"
@@ -42,14 +42,7 @@
                     android:textSize="30sp" />
 
 
-                <ImageView
-                    android:id="@+id/searchIconImageView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:padding="15dp"
-                    android:src="@drawable/ic_launcher_background" />
+
 
             </RelativeLayout>
 
@@ -87,11 +80,7 @@
                         android:text="Show do Cidadão"
                         android:textSize="17sp" />
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_alignParentRight="true"
-                        android:background="@drawable/ic_launcher_foreground" />
+
 
                     <TextView
                         android:layout_width="100dp"
@@ -142,11 +131,6 @@
                         android:text="Show do Cidadão"
                         android:textSize="17sp" />
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_alignParentRight="true"
-                        android:background="@drawable/ic_launcher_foreground" />
 
                     <TextView
                         android:layout_width="100dp"
@@ -197,11 +181,7 @@
                         android:text="Show do Cidadão"
                         android:textSize="17sp" />
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_alignParentRight="true"
-                        android:background="@drawable/ic_launcher_foreground" />
+
 
                     <TextView
                         android:layout_width="100dp"
@@ -252,11 +232,7 @@
                         android:text="Show do Cidadão"
                         android:textSize="17sp" />
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_alignParentRight="true"
-                        android:background="@drawable/ic_launcher_foreground" />
+
 
                     <TextView
                         android:layout_width="100dp"

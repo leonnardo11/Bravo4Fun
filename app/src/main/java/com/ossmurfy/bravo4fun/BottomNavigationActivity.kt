@@ -7,10 +7,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.ossmurfy.bravo4fun.databinding.ActivityBottomNavigationBinding
 import com.ossmurfy.bravo4fun.databinding.FragmentMainBinding
-import com.ossmurfy.bravo4fun.fragments.MainFragment
-import com.ossmurfy.bravo4fun.fragments.ProductFragment
-import com.ossmurfy.bravo4fun.fragments.ScannerFragment
-import com.ossmurfy.bravo4fun.fragments.perfilteste
+import com.ossmurfy.bravo4fun.fragments.*
 
 
 class BottomNavigationActivity : AppCompatActivity() {
@@ -26,9 +23,10 @@ class BottomNavigationActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.home -> replaceFragment(MainFragment())
                 R.id.profile -> replaceActivity(ProfileActivity())
-                /*R.id.eventos -> replaceFragment()
-                R.id.carrinho -> replaceFragment()
-                */
+                R.id.eventos -> replaceFragment(EventsFragment())
+
+                R.id.carrinho -> replaceFragment(CartFragment())
+
                 R.id.scanner -> replaceFragment(ScannerFragment())
 
                 else -> {
