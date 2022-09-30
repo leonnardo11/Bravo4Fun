@@ -22,7 +22,7 @@ class BottomNavigationActivity : AppCompatActivity() {
         binding.bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.home -> replaceFragment(MainFragment())
-                R.id.profile -> replaceActivity(ProfileActivity())
+                R.id.profile -> replaceFragment(ProfileFragment())
                 R.id.eventos -> replaceFragment(EventsFragment())
 
                 R.id.carrinho -> replaceFragment(CartFragment())
