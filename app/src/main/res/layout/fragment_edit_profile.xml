@@ -38,38 +38,63 @@
             android:gravity="center"
             android:text="Charmander"
             android:textSize="34sp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="169dp"
+            android:layout_height="39dp"
+            android:layout_margin="10sp"
+            android:text="Editar Perfil"
+            android:textSize="25sp" />
     </androidx.cardview.widget.CardView>
-
-    <Button
-        android:id="@+id/meusPedidosButton"
-        android:layout_width="280dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="30dp"
-        android:text="MEUS PEDIDOS"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ProfileImageCardView" />
-
-    <Button
-        android:id="@+id/editarPerfilButton"
-        android:layout_width="280dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:text="EDITAR PERFIL"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/meusPedidosButton" />
 
     <Button
         android:id="@+id/sairButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:width="280dp"
         android:height="50dp"
-        android:text="SAIR"
+        android:text="Salvar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editarPerfilButton" />
+        tools:layout_editor_absoluteY="513dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="72dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Charmander"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ProfileImageCardView" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName4"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="charmander@charmander.com"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Digite as informações para alterar perfil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ProfileImageCardView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
