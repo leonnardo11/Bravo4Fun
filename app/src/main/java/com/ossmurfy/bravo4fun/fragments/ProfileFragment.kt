@@ -25,6 +25,11 @@ class ProfileFragment : Fragment() {
             activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.frame_layout, frag)?.commit()
         }
 
+        binding.sairButton.setOnClickListener {
+            var i = Intent(context, LoginActivity::class.java)
+            startActivity(i)
+        }
+
         return binding.root
     }
 
