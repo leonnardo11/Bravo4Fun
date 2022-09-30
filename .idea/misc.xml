@@ -13,6 +13,7 @@
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.37552083333333336" />
         <entry key="app/src/main/res/layout/activity_scanner.xml" value="0.37552083333333336" />
         <entry key="app/src/main/res/layout/fragment_cart.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_edit_profile.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/fragment_listar_categoria.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.37552083333333336" />
         <entry key="app/src/main/res/layout/fragment_perfilteste.xml" value="0.37552083333333336" />
