@@ -2,11 +2,18 @@ package com.ossmurfy.bravo4fun.service
 
 
 import com.ossmurfy.bravo4fun.model.Produto
+import retrofit2.Call
 
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface ProdutoService {
 
-    @GET("/android/rest/produto")
-    fun listar(): retrofit2.Call<List<Produto>>
+    @GET("/api/product")
+    fun listAll(): Call<List<Produto>>
+
+
+    @GET("/api/product/{id)")
+    fun list(@Path("/id") id: Int): Call<Produto>
+
 }
