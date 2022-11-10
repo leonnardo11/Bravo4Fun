@@ -23,7 +23,7 @@ class ProfileFragment : Fragment() {
         binding.editarPerfilButton.setOnClickListener {
             val frag = EditProfileFragment()
             activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.frame_layout, frag)?.commit()
-        }
+        } 
 
         return binding.root
     }
