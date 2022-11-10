@@ -17,4 +17,8 @@ class API {
         get() {
             return retrofit.create(ProdutoService::class.java)
         }
+    val cart: CartService
+        get(){
+            return retrofit.create(CartService::class.java)
+        }
 }
