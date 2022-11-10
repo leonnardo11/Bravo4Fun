@@ -12,7 +12,7 @@ interface ProdutoService {
     @GET("/api/product")
     fun listAll(): Call<List<Produto>>
 
-    //list all
+    //list all a
     @GET("/api/product/{id)")
     fun list(@Path("/id") id: Int): Call<Produto>
 
