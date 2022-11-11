@@ -8,6 +8,6 @@ interface CartService {
 
     //USADO NO PROJETO
     @GET("/api/cart")
-    fun listar(): Call<List<Cart>>
+    fun listAll(): Call<List<Cart>>
 
 }

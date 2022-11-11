@@ -34,7 +34,7 @@ class ProductActivity : AppCompatActivity() {
         val service = retrofit.create(ProdutoService::class.java)
 
 
-        val chamada = service.listar()
+        val chamada = service.listAll()
 
 
         val callback = object : Callback<List<Produto>> {
