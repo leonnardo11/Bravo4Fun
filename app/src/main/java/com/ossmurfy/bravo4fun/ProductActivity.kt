@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.ossmurfy.bravo4fun.databinding.ActivityProductBinding
 import com.ossmurfy.bravo4fun.service.ProdutoService
 import com.ossmurfy.bravo4fun.model.Produto
+import com.ossmurfy.bravo4fun.model.ProdutoResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -34,15 +35,15 @@ class ProductActivity : AppCompatActivity() {
         val service = retrofit.create(ProdutoService::class.java)
 
 
-        val chamada = service.listar()
+        val chamada = service.listAll()
 
 
-        val callback = object : Callback<List<Produto>> {
-            override fun onResponse(call: Call<List<Produto>>, response: Response<List<Produto>>) {
+        val callback = object : Callback<ProdutoResponse> {
+            override fun onResponse(call: Call<ProdutoResponse>, response: Response<ProdutoResponse>) {
                 if (response.isSuccessful) {
                     val listaProduto = response.body()
 
-                    val nomeProduto = listaProduto?.first()?.PRODUTO_NOME
+                    val nomeProduto = listaProduto?.produtos?.first()?.PRODUTO_NOME
 
                     alert("Sucesso", "Nome do Primeiro Produto: $nomeProduto")
                 } else {
@@ -50,7 +51,7 @@ class ProductActivity : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<List<Produto>>, t: Throwable) {
+            override fun onFailure(call: Call<ProdutoResponse>, t: Throwable) {
                alert("Erro", t.message.toString())
             }
         }

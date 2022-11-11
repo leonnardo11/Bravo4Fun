@@ -12,6 +12,8 @@
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.37552083333333336" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.37552083333333336" />
         <entry key="app/src/main/res/layout/activity_scanner.xml" value="0.37552083333333336" />
+        <entry key="app/src/main/res/layout/card_product.xml" value="0.40677083333333336" />
+        <entry key="app/src/main/res/layout/event_card.xml" value="0.5239583333333333" />
         <entry key="app/src/main/res/layout/fragment_cart.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_edit_profile.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/fragment_events.xml" value="0.525" />
