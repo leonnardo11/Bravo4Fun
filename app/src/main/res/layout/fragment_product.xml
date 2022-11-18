@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/john_wick_02"
@@ -12,13 +13,7 @@
         android:layout_width="412dp"
         android:layout_height="732dp"
         android:layout_marginEnd="1dp"
-        android:drawable="?android:attr/textColorHintInverse"
-        app:cardBackgroundColor="?android:attr/textColorTertiary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.332" >
+        app:cardBackgroundColor="?android:attr/textColorTertiary">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -34,7 +29,6 @@
                 android:padding="10dp"
                 android:paddingStart="20dp"
                 android:paddingTop="20dp"
-                android:text="John Wick"
                 android:textColor="@color/white"
                 android:textSize="34sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -59,13 +53,13 @@
                 android:id="@+id/priceTextView"
                 android:layout_width="146dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="R$200,00"
+                android:layout_marginBottom="40dp"
+                android:text="R$"
                 android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toTopOf="@+id/buyButton"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.06"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/descriptionTextView" />
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/locationTextView"
@@ -81,18 +75,19 @@
 
             <TextView
                 android:id="@+id/descriptionTextView"
-                android:layout_width="330dp"
-                android:layout_height="234dp"
+                android:layout_width="336dp"
+                android:layout_height="113dp"
                 android:layout_gravity="center|top|left"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="32dp"
                 android:layout_marginEnd="11dp"
-                android:text="John Wick é um lendário assassino de aluguel aposentado, lidando com o luto após perder o grande amor de sua vida. Quando um gângster invade sua casa, mata seu cachorro e rouba seu carro, ele é forçado a voltar à ativa e inicia sua vingança."
                 android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toTopOf="@+id/priceTextView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.508"
+                app:layout_constraintHorizontal_bias="0.518"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/dateTextView" />
+                app:layout_constraintTop_toBottomOf="@+id/dateTextView"
+                app:layout_constraintVertical_bias="0.321" />
 
             <Button
                 android:id="@+id/buyButton"
@@ -100,15 +95,15 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center"
                 android:layout_marginStart="80dp"
-                android:layout_marginTop="76dp"
                 android:layout_marginEnd="82dp"
+                android:layout_marginBottom="16dp"
                 android:width="250dp"
                 android:text="Comprar"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/descriptionTextView" />
+                app:layout_constraintHorizontal_bias="0.464"
+                app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

@@ -29,12 +29,16 @@ class EventsFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentEventsBinding.inflate(inflater)
 
-        atualizarProdutos(inflater)
+        atualizarProdutos()
+
+        binding.swipe.setOnRefreshListener {
+            atualizarProdutos()
+        }
 
         return binding.root
     }
 
-    fun atualizarProdutos(inflater: LayoutInflater) {
+    fun atualizarProdutos() {
 
         //Callback acionado quando a execução da API concluir
         val callback = object : Callback<ProdutoResponse> {
@@ -46,7 +50,8 @@ class EventsFragment : Fragment() {
 
                 if (response.isSuccessful) {
                     val produtosResponse  = response.body()
-                    atualizarUI(produtosResponse?.produtos, inflater)
+                    atualizarUI(produtosResponse?.produtos)
+                    desabilitarCarregamento()
                 }
                 else {
                     //val error = response.errorBody().toString()
@@ -60,7 +65,7 @@ class EventsFragment : Fragment() {
             //Chamada caso aconteça algum problema e não seja possível bater no endpoint
             //Ou a resposta seja incompatível
             override fun onFailure(call: Call<ProdutoResponse>, t: Throwable) {
-                //desabilitarCarregamento()
+                desabilitarCarregamento()
 
                 //Snackbar.make(binding.container, "Não foi possível se conectar ao servidor",
                     //Snackbar.LENGTH_LONG).show()
@@ -73,10 +78,20 @@ class EventsFragment : Fragment() {
         API().produto.listAll().enqueue(callback)
 
         //Chama uma função para habilitar o carregamento
-        //habilitarCarregamento()
+        habilitarCarregamento()
     }
 
-    fun atualizarUI(lista: List<Produto>?, inflater: LayoutInflater) {
+    private fun desabilitarCarregamento() {
+        binding.swipe.isRefreshing = false
+
+    }
+
+
+    private fun habilitarCarregamento() {
+        binding.swipe.isRefreshing = true
+    }
+
+    fun atualizarUI(lista: List<Produto>?) {
         //Limpa a lista de itens
         binding.container.removeAllViews()
 
@@ -84,7 +99,7 @@ class EventsFragment : Fragment() {
         lista?.forEach {
             //ELEMENTOS DINÂMICOS
             //Cria um cartão dinamicamente
-            val cardBinding = EventCardBinding.inflate(inflater)
+            val cardBinding = EventCardBinding.inflate(layoutInflater)
 
             //Configura os itens do cartão com os valores do
             //item do array

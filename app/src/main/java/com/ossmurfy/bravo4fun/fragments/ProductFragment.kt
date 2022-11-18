@@ -21,6 +21,7 @@ import com.ossmurfy.bravo4fun.service.API
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.NumberFormat
 
 class ProductFragment (val idProdutoo: Int) : Fragment() {
 
@@ -31,7 +32,7 @@ class ProductFragment (val idProdutoo: Int) : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         binding = FragmentProductBinding.inflate(inflater)
 
         atualizaProduto(inflater)
@@ -47,7 +48,7 @@ class ProductFragment (val idProdutoo: Int) : Fragment() {
             //Chamada quando o endpoint responder
             override fun onResponse(call: Call<VerProdutoResponse>, response: Response<VerProdutoResponse>) {
 
-                //desabilitarCarregamento()
+                desabilitarCarregamento()
 
                 if (response.isSuccessful) {
                     val produtoResponse  = response.body()
@@ -65,7 +66,7 @@ class ProductFragment (val idProdutoo: Int) : Fragment() {
             //Chamada caso aconteça algum problema e não seja possível bater no endpoint
             //Ou a resposta seja incompatível
             override fun onFailure(call: Call<VerProdutoResponse>, t: Throwable) {
-                //desabilitarCarregamento()
+                desabilitarCarregamento()
 
                 //Snackbar.make(binding.container, "Não foi possível se conectar ao servidor",
                 //Snackbar.LENGTH_LONG).show()
@@ -78,21 +79,24 @@ class ProductFragment (val idProdutoo: Int) : Fragment() {
         API().produto.list(idProdutoo).enqueue(callback)
 
         //Chama uma função para habilitar o carregamento
-        //habilitarCarregamento()
+        habilitarCarregamento()
+    }
+
+    private fun desabilitarCarregamento() {
+        binding.swipe.isRefreshing = false
+
+    }
+
+
+    private fun habilitarCarregamento() {
+        binding.swipe.isRefreshing = true
     }
 
     fun atualizarUI(produto: Produto?, inflater: LayoutInflater) {
-        //Limpa a lista de itens
-
-
-        //Itera pela lista de respostas
-
-            //ELEMENTOS DINÂMICOS
-            //Cria um cartão dinamicamente
             produto?.let{
                 binding.titleTextView.text = it.PRODUTO_NOME
                 binding.descriptionTextView.text = it.PRODUTO_DESC
-                binding.priceTextView.text = it.PRODUTO_PRECO
+                binding.priceTextView.text = "R$ " + it.PRODUTO_PRECO
             }
     }
 }
