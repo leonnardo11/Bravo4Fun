@@ -22,7 +22,7 @@ class MainFragment : Fragment() {
         binding = FragmentMainBinding.inflate(inflater)
 
        binding.buttonHome.setOnClickListener {
-            val frag = ProductFragment()
+            val frag = ProductFragment(2)
             activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.frame_layout, frag)?.commit()
 
         }

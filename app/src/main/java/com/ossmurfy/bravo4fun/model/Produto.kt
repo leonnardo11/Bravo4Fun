@@ -6,5 +6,6 @@ data class Produto(
     var PRODUTO_DESC: String,
     var PRODUTO_DESCONTO: Double,
     var CATEGORIA_ID: Int,
-    var PRODUTO_ATIVO: Boolean
+    var PRODUTO_ATIVO: Int,
+    var PRODUTO_PRECO: String,
 )
