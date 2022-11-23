@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ossmurfy.bravo4fun.R
+import com.ossmurfy.bravo4fun.databinding.FragmentCartBinding
+import com.ossmurfy.bravo4fun.databinding.ItemCartBinding
+import com.ossmurfy.bravo4fun.model.Cart
 import com.ossmurfy.bravo4fun.model.Produto
 import com.ossmurfy.bravo4fun.service.API
 import retrofit2.Call
@@ -14,13 +17,14 @@ import retrofit2.Response
 
 
 class EventsFragment : Fragment() {
-
+    lateinit var binding : FragmentCartBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = FragmentCartBinding.inflate(inflater)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_events, container, false)
+        return binding.root
     }
 
     fun atualizarProdutos() {
@@ -65,7 +69,7 @@ class EventsFragment : Fragment() {
         //habilitarCarregamento()
     }
 
-    fun atualizarUI(lista: List<Produto>?) {
+    fun atualizarUI(lista: List<Cart>?) {
         //Limpa a lista de itens
         binding.container.removeAllViews()
 
@@ -73,12 +77,12 @@ class EventsFragment : Fragment() {
         lista?.forEach {
             //ELEMENTOS DINÂMICOS
             //Cria um cartão dinamicamente
-            val cardBinding = CardItemBinding.inflate(layoutInflater)
+            val cardBinding = ItemCartBinding.inflate(layoutInflater)
 
             //Configura os itens do cartão com os valores do
             //item do array
-            cardBinding.textTitulo.text = it.nomeProduto
-            cardBinding.textDesc.text = it.descProduto
+            cardBinding.textViewNome.text = it.nomeProduto
+            cardBinding.textViewQTD.text = it.descProduto
 
             //Solicita o carregamento da imagem
             Picasso.get().load(
