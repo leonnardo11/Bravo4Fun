@@ -10,7 +10,7 @@ import retrofit2.http.Path
 interface ProdutoService {
 
     @GET("/api/product")
-    fun listAll(): Call<List<Produto>>
+    fun listar(): Call<List<Produto>>
 
     //list all aa
     @GET("/api/product/{id)")

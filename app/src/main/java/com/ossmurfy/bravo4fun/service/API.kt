@@ -8,7 +8,7 @@ class API {
         get() {
             return Retrofit
                 .Builder()
-                .baseUrl("https://oficinacordova.azurewebsites.net")
+                .baseUrl("https://Bravo4FunWeb-leonnardo1588.bravo4fun-smurfies.repl.co")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
         }

@@ -14,7 +14,7 @@
         <entry key="app/src/main/res/layout/activity_scanner.xml" value="0.37552083333333336" />
         <entry key="app/src/main/res/layout/fragment_cart.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_edit_profile.xml" value="0.2953125" />
-        <entry key="app/src/main/res/layout/fragment_events.xml" value="0.525" />
+        <entry key="app/src/main/res/layout/fragment_events.xml" value="0.34560906515580736" />
         <entry key="app/src/main/res/layout/fragment_listar_categoria.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.37552083333333336" />
         <entry key="app/src/main/res/layout/fragment_perfilteste.xml" value="0.37552083333333336" />
@@ -23,6 +23,7 @@
         <entry key="app/src/main/res/layout/fragment_profileteste.xml" value="0.37552083333333336" />
         <entry key="app/src/main/res/layout/fragment_scanner.xml" value="0.37552083333333336" />
         <entry key="app/src/main/res/layout/fragment_testehome.xml" value="0.37552083333333336" />
+        <entry key="app/src/main/res/layout/item_carrinho.xml" value="0.2953125" />
         <entry key="app/src/main/res/menu/bottom_nav.xml" value="0.37552083333333336" />
         <entry key="app/src/main/res/menu/menu_event.xml" value="0.37604166666666666" />
       </map>
