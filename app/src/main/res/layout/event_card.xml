@@ -18,7 +18,7 @@
                     ]]>
 
         <ImageView
-            android:id="@+id/productImageView1"
+            android:id="@+id/imagem"
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:layout_alignParentStart="true"

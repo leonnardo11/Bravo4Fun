@@ -12,6 +12,7 @@ import com.ossmurfy.bravo4fun.databinding.FragmentEventsBinding
 import com.ossmurfy.bravo4fun.model.Produto
 import com.ossmurfy.bravo4fun.model.ProdutoResponse
 import com.ossmurfy.bravo4fun.service.API
+import com.squareup.picasso.Picasso
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -105,11 +106,12 @@ class EventsFragment : Fragment() {
             //item do array
             cardBinding.textTitulo.text = it.PRODUTO_NOME
             cardBinding.textDesc.text = it.PRODUTO_DESC
+            var imagem = it.PRODUTO_IMAGEM[0]
 
             //Solicita o carregamento da imagem
-            //Picasso.get().load(
-                //"https://oficinacordova.azurewebsites.net/android/rest/produto/image/${it.idProduto}"
-            //).placeholder(R.drawable.no_image).error(R.drawable.no_image).into(cardBinding.imagem)
+            Picasso.get().load(
+               "$imagem"
+            ).placeholder(R.drawable.no_image).error(R.drawable.no_image).into(cardBinding.imagem)
 
 
             cardBinding.root.setOnClickListener { cartao ->

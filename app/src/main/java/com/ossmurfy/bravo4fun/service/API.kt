@@ -8,7 +8,7 @@ class API {
         get() {
             return Retrofit
                 .Builder()
-                .baseUrl("https://bravo4funweb.bravo4fun-smurfies.repl.co")
+                .baseUrl("https://Laravel-9.leonnardo1588.repl.co")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
         }

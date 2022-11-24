@@ -11,11 +11,11 @@ import retrofit2.http.Path
 
 interface ProdutoService {
 
-    @GET("/api/product")
+    @GET("/api/products")
     fun listAll(): Call<ProdutoResponse>
 
     //list all aa
-    @GET("/api/product/{id}")
+    @GET("/api/products/{id}")
     fun list(@Path("id") id: Int): Call<VerProdutoResponse>
 
 }
