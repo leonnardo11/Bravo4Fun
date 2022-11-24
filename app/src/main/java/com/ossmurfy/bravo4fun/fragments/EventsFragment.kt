@@ -7,8 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ossmurfy.bravo4fun.R
-import com.ossmurfy.bravo4fun.databinding.FragmentCartBinding
-import com.ossmurfy.bravo4fun.databinding.ItemCartBinding
+import com.ossmurfy.bravo4fun.databinding.*
 import com.ossmurfy.bravo4fun.model.Cart
 import com.ossmurfy.bravo4fun.model.Produto
 import com.ossmurfy.bravo4fun.model.ProdutoResponse
@@ -19,14 +18,13 @@ import retrofit2.Response
 
 
 class EventsFragment : Fragment() {
-    lateinit var binding : FragmentCartBinding
+    lateinit var binding : FragmentEventsBinding
     override fun onCreateView(
 
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentCartBinding.inflate(inflater)
-        // Inflate the layout for this fragment
+
 
         binding = FragmentEventsBinding.inflate(inflater)
 
@@ -94,7 +92,7 @@ class EventsFragment : Fragment() {
         binding.swipe.isRefreshing = true
     }
 
-    fun atualizarUI(lista: List<Cart>?) {
+    fun atualizarUI(lista: List<Produto>?) {
         //Limpa a lista de itens
         binding.container.removeAllViews()
 
@@ -102,12 +100,10 @@ class EventsFragment : Fragment() {
         lista?.forEach {
             //ELEMENTOS DINÂMICOS
             //Cria um cartão dinamicamente
-            val cardBinding = ItemCartBinding.inflate(layoutInflater)
+            val ProductBinding = EventCardBinding.inflate(layoutInflater)
 
-            //Configura os itens do cartão com os valores do
-            //item do array
-            cardBinding.textViewNome.text = it.nomeProduto
-            cardBinding.textViewQTD.text = it.descProduto
+            ProductBinding.textTitulo.text = it.PRODUTO_NOME
+            ProductBinding.textDesc.text = it.PRODUTO_PRECO
 
             //Solicita o carregamento da imagem
             //Picasso.get().load(
@@ -115,13 +111,13 @@ class EventsFragment : Fragment() {
             //).placeholder(R.drawable.no_image).error(R.drawable.no_image).into(cardBinding.imagem)
 
 
-            cardBinding.root.setOnClickListener { cartao ->
+            ProductBinding.root.setOnClickListener { cartao ->
                 val frag = ProductFragment(it.PRODUTO_ID)
                 activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.frame_layout, frag)?.addToBackStack("Detalhe do Produto")?.commit()
             }
 
             //Adiciona o cartão no container para que apareça na tela
-            binding.container.addView(cardBinding.root)
+            binding.container.addView(ProductBinding.root)
         }
     }
 
