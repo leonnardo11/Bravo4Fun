@@ -12,7 +12,9 @@ import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.budiyev.android.codescanner.*
 import com.google.android.material.snackbar.Snackbar
+import com.google.zxing.BarcodeFormat
 import com.ossmurfy.bravo4fun.databinding.ActivityQrCodeBinding
 
 class QrCodeActivity : AppCompatActivity() {
@@ -141,7 +143,7 @@ class QrCodeActivity : AppCompatActivity() {
         //O diálogo questonará se o usuário quer abrir as configurações para habilitar
         //a permissão da câmera
         AlertDialog.Builder(this)
-            .setTitle("Permição de câmera")
+            .setTitle("Permissão de câmera")
             .setMessage(
                 "Habilite a permissão de uso da câmera do aplicativo em Configurações"
             )
@@ -165,5 +167,4 @@ class QrCodeActivity : AppCompatActivity() {
             .create()
             .show()
     }
-}
 }
