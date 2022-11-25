@@ -47,7 +47,9 @@ class ProductFragment (val idProdutoo: Int) : Fragment() {
 
             //Chamada quando o endpoint responder
             override fun onResponse(call: Call<VerProdutoResponse>, response: Response<VerProdutoResponse>) {
-
+                if (activity == null) {
+                    return
+                }
                 desabilitarCarregamento()
 
                 if (response.isSuccessful) {

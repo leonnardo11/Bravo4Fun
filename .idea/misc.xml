@@ -10,6 +10,7 @@
         <entry key="app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.4895" />
         <entry key="app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.4895" />
         <entry key="app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.4895" />
+        <entry key="app/src/main/res/drawable/no_image.xml" value="0.2225" />
         <entry key="app/src/main/res/layout/activity_bottom_navigation.xml" value="0.37552083333333336" />
         <entry key="app/src/main/res/layout/activity_carrinho.xml" value="0.3342391304347826" />
         <entry key="app/src/main/res/layout/activity_cart.xml" value="0.33" />
@@ -33,7 +34,6 @@
         <entry key="app/src/main/res/layout/fragment_profileteste.xml" value="0.37552083333333336" />
         <entry key="app/src/main/res/layout/fragment_scanner.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_testehome.xml" value="0.37552083333333336" />
-        <entry key="app/src/main/res/layout/item_carrinho.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/menu/bottom_nav.xml" value="0.37552083333333336" />
         <entry key="app/src/main/res/menu/menu_event.xml" value="0.37604166666666666" />
       </map>
