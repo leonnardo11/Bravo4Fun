@@ -8,5 +8,5 @@ data class Produto(
     var CATEGORIA_ID: Int,
     var PRODUTO_ATIVO: Int,
     var PRODUTO_PRECO: String,
-    var PRODUTO_IMAGEM: String,
+    var PRODUTO_IMAGEM: List<String>,
 )

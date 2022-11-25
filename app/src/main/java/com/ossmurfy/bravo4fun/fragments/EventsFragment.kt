@@ -47,6 +47,10 @@ class EventsFragment : Fragment() {
             //Chamada quando o endpoint responder
             override fun onResponse(call: Call<ProdutoResponse>, response: Response<ProdutoResponse>) {
 
+                if (activity == null) {
+                    return
+                }
+
                 //desabilitarCarregamento()
 
                 if (response.isSuccessful) {
@@ -106,13 +110,17 @@ class EventsFragment : Fragment() {
             //item do array
             cardBinding.textTitulo.text = it.PRODUTO_NOME
             cardBinding.textDesc.text = it.PRODUTO_DESC
-            var imagem = it.PRODUTO_IMAGEM[0]
+            if(it.PRODUTO_IMAGEM != null && it.PRODUTO_IMAGEM.size > 0) {
 
-            //Solicita o carregamento da imagem
-            Picasso.get().load(
-               "$imagem"
-            ).placeholder(R.drawable.no_image).error(R.drawable.no_image).into(cardBinding.imagem)
 
+                var imagem = it.PRODUTO_IMAGEM[0]
+
+                //Solicita o carregamento da imagem
+                Picasso.get().load(
+                    "$imagem"
+                ).placeholder(R.drawable.no_image).error(R.drawable.no_image)
+                    .into(cardBinding.imagem)
+            }
 
             cardBinding.root.setOnClickListener { cartao ->
                 val frag = ProductFragment(it.PRODUTO_ID)
