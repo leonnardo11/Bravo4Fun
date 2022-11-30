@@ -43,7 +43,7 @@ class ProductActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val listaProduto = response.body()
 
-                    val nomeProduto = listaProduto?.produtos?.first()?.PRODUTO_NOME
+                    val nomeProduto = listaProduto?.data?.first()?.PRODUTO_NOME
 
                     alert("Sucesso", "Nome do Primeiro Produto: $nomeProduto")
                 } else {

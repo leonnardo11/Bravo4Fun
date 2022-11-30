@@ -15,7 +15,7 @@
         android:layout_marginBottom="5dp">
 
         <ImageView
-            android:id="@+id/productImageView1"
+            android:id="@+id/image"
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:background="@drawable/rectangle_14"
@@ -24,7 +24,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textViewNome"
+            android:id="@+id/ProdutoTitulo"
             android:layout_width="148dp"
             android:layout_height="29dp"
             android:layout_marginEnd="39dp"
@@ -32,41 +32,39 @@
             android:text="Show do Cidadão"
             android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.892"
+            app:layout_constraintStart_toEndOf="@+id/image"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/buttonAdd"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="16dp"
-            android:text="+"
+        <TextView
+            android:id="@+id/ProdutoQuant"
+            android:layout_width="187dp"
+            android:layout_height="34dp"
+
+            android:layout_marginBottom="32dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:text="Quantidade: 2"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewQTD" />
+            app:layout_constraintHorizontal_bias="0.569"
+            app:layout_constraintStart_toEndOf="@+id/image" />
 
         <TextView
-            android:id="@+id/textViewQTD"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:id="@+id/ProdutoPreco"
+            android:layout_width="187dp"
+            android:layout_height="34dp"
 
-            android:layout_marginBottom="24dp"
-            android:text="2"
+            android:layout_marginBottom="4dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:text="Valor: "
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/buttonMinus" />
-
-        <Button
-            android:id="@+id/buttonMinus"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="64dp"
-            android:layout_marginBottom="16dp"
-            android:text="-"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/productImageView1" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.569"
+            app:layout_constraintStart_toEndOf="@+id/image" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

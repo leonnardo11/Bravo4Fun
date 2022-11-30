@@ -11,7 +11,9 @@ import com.ossmurfy.bravo4fun.R
 import com.ossmurfy.bravo4fun.databinding.FragmentCartBinding
 import com.ossmurfy.bravo4fun.databinding.ItemCartBinding
 import com.ossmurfy.bravo4fun.model.Cart
+import com.ossmurfy.bravo4fun.model.CartResponse
 import com.ossmurfy.bravo4fun.service.API
+import com.squareup.picasso.Picasso
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -24,16 +26,16 @@ class CartFragment : Fragment() {
     fun atualizarProdutos(inflater: LayoutInflater) {
 
         //Callback acionado quando a execução da API concluir
-        val callback = object : Callback<List<Cart>> {
+        val callback = object : Callback<CartResponse> {
 
             //Chamada quando o endpoint responder
-            override fun onResponse(call: Call<List<Cart>>, response: Response<List<Cart>>) {
+            override fun onResponse(call: Call<CartResponse>, response: Response<CartResponse>) {
 
                 //desabilitarCarregamento()
 
                 if (response.isSuccessful) {
                     val listaProdutos = response.body()
-                    atualizarUI(listaProdutos, inflater)
+                    atualizarUI(listaProdutos?.data, inflater)
                 }
                 else {
                     //val error = response.errorBody().toString()
@@ -46,7 +48,7 @@ class CartFragment : Fragment() {
 
             //Chamada caso aconteça algum problema e não seja possível bater no endpoint
             //Ou a resposta seja incompatível
-            override fun onFailure(call: Call<List<Cart>>, t: Throwable) {
+            override fun onFailure(call: Call<CartResponse>, t: Throwable) {
                 //desabilitarCarregamento()
 
                 //Snackbar.make(binding.container, "Não foi possível se conectar ao servidor",
@@ -57,7 +59,7 @@ class CartFragment : Fragment() {
         }
 
         //Faz a chamada a API
-        API().cart.listAll().enqueue(callback)
+        API().cart.listCart(28).enqueue(callback)
 
         //Chama uma função para habilitar o carregamento
         //habilitarCarregamento()
@@ -75,21 +77,18 @@ class CartFragment : Fragment() {
 
             //Configura os itens do cartão com os valores do
             //item do array
-            cardBinding.textViewNome.text = it.PRODUTO_ID.toString()
-            cardBinding.textViewQTD.text = it.ITEM_QTD.toString()
+            cardBinding.ProdutoTitulo.text = it.PRODUTO_NOME
+            cardBinding.ProdutoQuant.text = "Quantidade: " + it.ITEM_QTD.toString()
+            cardBinding.ProdutoPreco.text = "R$: " + it.PRODUTO_PRECO.toString()
 
-            //Solicita o carregamento da imagem
-            //Picasso.get().load(
-            //"https://oficinacordova.azurewebsites.net/android/rest/produto/image/${it.idProduto}"
-            //).placeholder(R.drawable.no_image).error(R.drawable.no_image).into(cardBinding.imagem)
 
-            /*cardBinding.root.setOnClickListener { cartao ->
-                val frag = DetalheProdutoFragment(it.idProduto)
-                activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.container, frag)?.addToBackStack("Detalhe do Produto")?.commit()
-            }*/
+            Picasso.get().load(
+            ""
+            ).placeholder(R.drawable.no_image).error(R.drawable.no_image).into(cardBinding.image)
 
             //Adiciona o cartão no container para que apareça na tela
-            binding.container.addView(cardBinding.root)
+            binding.container.addView(cardBinding.root))
+
         }
     }
 

@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.android.material.snackbar.Snackbar
 import com.ossmurfy.bravo4fun.model.Produto
 import com.ossmurfy.bravo4fun.BottomNavigationActivity
 import com.ossmurfy.bravo4fun.R
@@ -15,6 +16,7 @@ import com.ossmurfy.bravo4fun.databinding.CardProductBinding
 import com.ossmurfy.bravo4fun.databinding.EventCardBinding
 import com.ossmurfy.bravo4fun.databinding.FragmentEventsBinding
 import com.ossmurfy.bravo4fun.databinding.FragmentProductBinding
+import com.ossmurfy.bravo4fun.model.CartResponse
 import com.ossmurfy.bravo4fun.model.ProdutoResponse
 import com.ossmurfy.bravo4fun.model.VerProdutoResponse
 import com.ossmurfy.bravo4fun.service.API
@@ -82,6 +84,32 @@ class ProductFragment (val idProdutoo: Int) : Fragment() {
 
         //Chama uma função para habilitar o carregamento
         habilitarCarregamento()
+    }
+
+    fun addCarrinho(){
+
+        val callback = object : Callback<CartResponse> {
+
+            override fun onResponse(call: Call<CartResponse>, response: Response<CartResponse>) {
+                if( response.isSuccessful ) {
+                    Snackbar.make(binding.root, "Produto adicionado no carrinho", Snackbar.LENGTH_LONG).show()
+                }
+            }
+
+            override fun onFailure(call: Call<CartResponse>, t: Throwable) {
+
+
+                Snackbar.make(binding.root, "Não foi possível se conectar ao servidor",
+                    Snackbar.LENGTH_LONG).show()
+
+
+                Log.e("ERROR", "Falha ao executar serviço", t)
+
+            }
+        }
+
+        API().cart.inserir(idProdutoo, 1, 28).enqueue(callback)
+
     }
 
     private fun desabilitarCarregamento() {

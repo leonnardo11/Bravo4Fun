@@ -51,11 +51,11 @@ class EventsFragment : Fragment() {
                     return
                 }
 
-                //desabilitarCarregamento()
+                desabilitarCarregamento()
 
                 if (response.isSuccessful) {
                     val produtosResponse  = response.body()
-                    atualizarUI(produtosResponse?.produtos)
+                    atualizarUI(produtosResponse?.data)
                     desabilitarCarregamento()
                 }
                 else {
