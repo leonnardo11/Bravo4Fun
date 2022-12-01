@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import com.google.android.material.snackbar.Snackbar
 import com.ossmurfy.bravo4fun.R
 import com.ossmurfy.bravo4fun.databinding.FragmentCartBinding
+import com.ossmurfy.bravo4fun.databinding.FragmentEventsBinding
 import com.ossmurfy.bravo4fun.databinding.ItemCartBinding
 import com.ossmurfy.bravo4fun.model.Cart
 import com.ossmurfy.bravo4fun.model.CartResponse
@@ -22,47 +23,58 @@ class CartFragment : Fragment() {
 
     lateinit var binding: FragmentCartBinding
 
+    override fun onCreateView(
 
-    fun atualizarProdutos(inflater: LayoutInflater) {
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
-        //Callback acionado quando a execução da API concluir
+        binding = FragmentCartBinding.inflate(inflater)
+
+        atualizarProdutos()
+
+
+        return binding.root
+    }
+
+    fun atualizarProdutos() {
+
+
         val callback = object : Callback<CartResponse> {
 
-            //Chamada quando o endpoint responder
+
             override fun onResponse(call: Call<CartResponse>, response: Response<CartResponse>) {
 
+                if (activity == null) {
+                    return
+                }
                 desabilitarCarregamento()
 
                 if (response.isSuccessful) {
                     val listaProdutos = response.body()
-                    atualizarUI(listaProdutos?.data, inflater)
+                    atualizarUI(listaProdutos?.data)
                 }
                 else {
-                    //val error = response.errorBody().toString()
-                    //Snackbar.make(binding.container, "Não é possível autualizar os produtos",
-                    //Snackbar.LENGTH_LONG).show()
 
-                    //Log.e("ERROR", response.errorBody().toString())
+
+                    Log.e("ERROR", response.errorBody().toString())
                 }
             }
 
-            //Chamada caso aconteça algum problema e não seja possível bater no endpoint
-            //Ou a resposta seja incompatível
+
             override fun onFailure(call: Call<CartResponse>, t: Throwable) {
-                //desabilitarCarregamento()
+                desabilitarCarregamento()
 
-                //Snackbar.make(binding.container, "Não foi possível se conectar ao servidor",
-                //Snackbar.LENGTH_LONG).show()
-
-                //Log.e("ERROR", "Falha ao executar serviço", t)
+                Log.e("ERROR", "Falha ao executar serviço", t)
             }
         }
 
         //Faz a chamada a API
         API().cart.listCart(28).enqueue(callback)
 
+
         //Chama uma função para habilitar o carregamento
-        //habilitarCarregamento()
+        habilitarCarregamento()
     }
 
     private fun desabilitarCarregamento() {
@@ -75,15 +87,15 @@ class CartFragment : Fragment() {
         binding.swipe.isRefreshing = true
     }
 
-    fun atualizarUI(lista: List<Cart>?, inflater: LayoutInflater) {
+    fun atualizarUI(lista: List<Cart>?) {
         //Limpa a lista de itens
-        binding.container.removeAllViews()
+        binding.listView.removeAllViews()
 
         //Itera pela lista de respostas
         lista?.forEach {
             //ELEMENTOS DINÂMICOS
             //Cria um cartão dinamicamente
-            val cardBinding = ItemCartBinding.inflate(inflater)
+            val cardBinding = ItemCartBinding.inflate(layoutInflater)
 
             //Configura os itens do cartão com os valores do
             //item do array
@@ -92,12 +104,17 @@ class CartFragment : Fragment() {
             cardBinding.ProdutoPreco.text = "R$: " + it.PRODUTO_PRECO.toString()
 
 
-            Picasso.get().load(
+            /*Picasso.get().load(
             ""
-            ).placeholder(R.drawable.no_image).error(R.drawable.no_image).into(cardBinding.image)
+            ).placeholder(R.drawable.no_image).error(R.drawable.no_image).into(cardBinding.image)*/
+
+            cardBinding.root.setOnClickListener { cartao ->
+                val frag = ProductFragment(it.PRODUTO_ID)
+                activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.frame_layout, frag)?.addToBackStack("Detalhe do Produto")?.commit()
+            }
 
             //Adiciona o cartão no container para que apareça na tela
-            binding.container.addView(cardBinding.root)
+            binding.listView.addView(cardBinding.root)
 
         }
     }
