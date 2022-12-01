@@ -9,12 +9,12 @@ class API {
     private val retrofit: Retrofit
         get() {
             val okHttpClient = OkHttpClient.Builder()
-                .readTimeout(60, TimeUnit.SECONDS)
-                .connectTimeout(60, TimeUnit.SECONDS)
+                .readTimeout(120, TimeUnit.SECONDS)
+                .connectTimeout(120, TimeUnit.SECONDS)
                 .build()
             return Retrofit
                 .Builder()
-                .baseUrl("https://Laravel-9.leonnardo1588.repl.co")
+                .baseUrl("https://bravo4fun-2.leonnardo1588.repl.co")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient)
                 .build()

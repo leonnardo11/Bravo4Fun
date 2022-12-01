@@ -1,7 +1,7 @@
 package com.ossmurfy.bravo4fun.model
 
-data class ProdutoResponse(
+data class CartResponse(
     var status: Int,
     var message: String,
-    var data: List<Produto>
+    var data: List<Cart>
 )
