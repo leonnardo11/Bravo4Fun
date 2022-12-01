@@ -31,7 +31,7 @@ class CartFragment : Fragment() {
             //Chamada quando o endpoint responder
             override fun onResponse(call: Call<CartResponse>, response: Response<CartResponse>) {
 
-                //desabilitarCarregamento()
+                desabilitarCarregamento()
 
                 if (response.isSuccessful) {
                     val listaProdutos = response.body()
@@ -65,6 +65,16 @@ class CartFragment : Fragment() {
         //habilitarCarregamento()
     }
 
+    private fun desabilitarCarregamento() {
+        binding.swipe.isRefreshing = false
+
+    }
+
+
+    private fun habilitarCarregamento() {
+        binding.swipe.isRefreshing = true
+    }
+
     fun atualizarUI(lista: List<Cart>?, inflater: LayoutInflater) {
         //Limpa a lista de itens
         binding.container.removeAllViews()
@@ -87,7 +97,7 @@ class CartFragment : Fragment() {
             ).placeholder(R.drawable.no_image).error(R.drawable.no_image).into(cardBinding.image)
 
             //Adiciona o cartão no container para que apareça na tela
-            binding.container.addView(cardBinding.root))
+            binding.container.addView(cardBinding.root)
 
         }
     }

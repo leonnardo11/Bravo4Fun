@@ -110,7 +110,7 @@ class EventsFragment : Fragment() {
             //item do array
             cardBinding.textTitulo.text = it.PRODUTO_NOME
             cardBinding.textDesc.text = it.PRODUTO_DESC
-            if(it.PRODUTO_IMAGEM != null && it.PRODUTO_IMAGEM.size > 0) {
+            /*if(it.PRODUTO_IMAGEM != null && it.PRODUTO_IMAGEM.isNotEmpty()){
 
 
                 var imagem = it.PRODUTO_IMAGEM[0]
@@ -120,7 +120,8 @@ class EventsFragment : Fragment() {
                     "$imagem"
                 ).placeholder(R.drawable.no_image).error(R.drawable.no_image)
                     .into(cardBinding.imagem)
-            }
+
+            }*/
 
             cardBinding.root.setOnClickListener { cartao ->
                 val frag = ProductFragment(it.PRODUTO_ID)

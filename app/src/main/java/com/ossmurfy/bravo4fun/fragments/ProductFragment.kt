@@ -25,6 +25,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.text.NumberFormat
 
+@Suppress("UNREACHABLE_CODE")
 class ProductFragment (val idProdutoo: Int) : Fragment() {
 
     lateinit var binding: FragmentProductBinding
@@ -39,7 +40,13 @@ class ProductFragment (val idProdutoo: Int) : Fragment() {
 
         atualizaProduto(inflater)
 
+        binding.buyButton.setOnClickListener {
+            addCarrinho()
+        }
+
         return binding.root
+
+
     }
 
     fun atualizaProduto(inflater: LayoutInflater) {
@@ -56,19 +63,18 @@ class ProductFragment (val idProdutoo: Int) : Fragment() {
 
                 if (response.isSuccessful) {
                     val produtoResponse  = response.body()
-                    atualizarUI(produtoResponse?.produto, inflater)
+                    atualizarUI(produtoResponse?.data, inflater)
                 }
                 else {
-                    //val error = response.errorBody().toString()
-                    //Snackbar.make(binding.container, "Não é possível autualizar os produtos",
+                    val error = response.errorBody().toString()
+                    //Snackbar.make(binding.container, "Não é possível atualizar os produtos",
                     //Snackbar.LENGTH_LONG).show()
 
                     Log.e("ERROR", response.errorBody().toString())
                 }
             }
 
-            //Chamada caso aconteça algum problema e não seja possível bater no endpoint
-            //Ou a resposta seja incompatível
+
             override fun onFailure(call: Call<VerProdutoResponse>, t: Throwable) {
                 desabilitarCarregamento()
 
@@ -108,7 +114,7 @@ class ProductFragment (val idProdutoo: Int) : Fragment() {
             }
         }
 
-        API().cart.inserir(idProdutoo, 1, 28).enqueue(callback)
+        API().cart.inserir(5, 1, 28).enqueue(callback)
 
     }
 
