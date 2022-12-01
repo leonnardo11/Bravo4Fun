@@ -1,6 +1,7 @@
 package com.ossmurfy.bravo4fun.fragments
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -38,11 +39,13 @@ class ProductFragment (val idProdutoo: Int) : Fragment() {
 
         binding = FragmentProductBinding.inflate(inflater)
 
-        atualizaProduto(inflater)
-
         binding.buyButton.setOnClickListener {
             addCarrinho()
         }
+
+        atualizaProduto(inflater)
+
+
 
         return binding.root
 
@@ -98,23 +101,16 @@ class ProductFragment (val idProdutoo: Int) : Fragment() {
 
             override fun onResponse(call: Call<CartResponse>, response: Response<CartResponse>) {
                 if( response.isSuccessful ) {
-                    Snackbar.make(binding.root, "Produto adicionado no carrinho", Snackbar.LENGTH_LONG).show()
+                    AlertaSucesso()
                 }
             }
 
             override fun onFailure(call: Call<CartResponse>, t: Throwable) {
-
-
-                Snackbar.make(binding.root, "Não foi possível se conectar ao servidor",
-                    Snackbar.LENGTH_LONG).show()
-
-
-                Log.e("ERROR", "Falha ao executar serviço", t)
-
+                AlertaFalha()
             }
         }
 
-        API().cart.inserir(5, 1, 28).enqueue(callback)
+        API().cart.inserir(idProdutoo, 1, 30).enqueue(callback)
 
     }
 
@@ -133,6 +129,25 @@ class ProductFragment (val idProdutoo: Int) : Fragment() {
                 binding.titleTextView.text = it.PRODUTO_NOME
                 binding.descriptionTextView.text = it.PRODUTO_DESC
                 binding.priceTextView.text = "R$ " + it.PRODUTO_PRECO
+
             }
+
+    }
+
+    fun AlertaSucesso(){
+            AlertDialog.Builder(context)
+                .setTitle("Sucesso!")
+                .setMessage("Produto adicionado ao carrinho.")
+                .setPositiveButton("OK", null)
+                .create()
+                .show()
+        }
+    fun AlertaFalha(){
+        AlertDialog.Builder(context)
+            .setTitle("Falha!")
+            .setMessage("Algo de errado aconteceu no caminho. :(")
+            .setPositiveButton("OK", null)
+            .create()
+            .show()
     }
 }

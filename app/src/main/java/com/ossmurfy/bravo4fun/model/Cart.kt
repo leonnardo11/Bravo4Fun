@@ -6,7 +6,7 @@ data class Cart(
     var ITEM_QTD: Int,
     var PRODUTO_NOME: String,
     var PRODUTO_PRECO: Double,
-    var PRODUTO_PRECO_TOTAL: Double,
+    var PRODUTO_PRECO_TOTAL: Number,
 )
 
 

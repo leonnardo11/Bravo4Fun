@@ -70,7 +70,7 @@ class CartFragment : Fragment() {
         }
 
         //Faz a chamada a API
-        API().cart.listCart(28).enqueue(callback)
+        API().cart.listCart(30).enqueue(callback)
 
 
         //Chama uma função para habilitar o carregamento
@@ -100,9 +100,8 @@ class CartFragment : Fragment() {
             //Configura os itens do cartão com os valores do
             //item do array
             cardBinding.ProdutoTitulo.text = it.PRODUTO_NOME
+            cardBinding.ProdutoPreco.text = "Valor total: R$ " + it.PRODUTO_PRECO_TOTAL
             cardBinding.ProdutoQuant.text = "Quantidade: " + it.ITEM_QTD.toString()
-            cardBinding.ProdutoPreco.text = "R$: " + it.PRODUTO_PRECO.toString()
-
 
             /*Picasso.get().load(
             ""

@@ -17,7 +17,7 @@ interface CartService {
     @GET("/api/cart")
     fun listAll(): Call<List<Cart>>
 
-    @POST("/api/cart/produto")
+    @POST("/api/cart")
     fun inserir(@Query("PRODUTO_ID") PRODUTO_ID: Int, @Query("ITEM_QTD") ITEM_QTD: Int, @Header ("USUARIO_ID") USUARIO_ID: Int ): Call<CartResponse>
 
     @GET("/api/cart/{id}")
