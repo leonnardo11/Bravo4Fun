@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import com.ossmurfy.bravo4fun.BottomNavigationActivity
 import com.ossmurfy.bravo4fun.R
 import com.ossmurfy.bravo4fun.databinding.FragmentMainBinding
@@ -21,10 +22,33 @@ class MainFragment : Fragment() {
     ): View? {
         binding = FragmentMainBinding.inflate(inflater)
 
-       binding.buttonHome.setOnClickListener {
-            val frag = ProductFragment(2)
-            activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.frame_layout, frag)?.commit()
+       binding.imageViewKnotFest.setOnClickListener {
 
+           //binding.MainLayout.background = "@drawable/knotfest"
+           binding.textViewMainTitle.text="KNOTFEST"
+           binding.MainLayout.setBackgroundDrawable(getDrawable(requireContext(), R.drawable.knotfest))
+
+        }
+        binding.imageViewLollaPalooza.setOnClickListener{
+            binding.MainLayout.setBackgroundDrawable(getDrawable(requireContext(), R.drawable.lollapalooza))
+            binding.textViewMainTitle.text="LOLLAPALOOZA"
+        }
+        binding.imageViewRockInRio.setOnClickListener {
+            binding.MainLayout.setBackgroundDrawable(getDrawable(requireContext(), R.drawable.rock_in_rio))
+            binding.textViewMainTitle.text="ROCK IN RIO"
+        }
+
+        binding.buttonHome.setOnClickListener {
+            if(binding.textViewMainTitle.text=="KNOTFEST"){
+                val frag = ProductFragment(3)
+                activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.frame_layout, frag)?.commit()
+            }else if(binding.textViewMainTitle.text=="LOLLAPALOOZA"){
+                val frag = ProductFragment(87)
+                activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.frame_layout, frag)?.commit()
+            } else if(binding.textViewMainTitle.text=="ROCK IN RIO"){
+                val frag = ProductFragment(94)
+                activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.frame_layout, frag)?.commit()
+            }
         }
 
 
