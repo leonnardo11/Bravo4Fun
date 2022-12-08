@@ -21,10 +21,29 @@ class MainFragment : Fragment() {
     ): View? {
         binding = FragmentMainBinding.inflate(inflater)
 
-       binding.buttonHome.setOnClickListener {
-            val frag = ProductFragment(2)
-            activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.frame_layout, frag)?.commit()
+       binding.imageViewKnotFest.setOnClickListener {
 
+           //binding.MainLayout.background = "@drawable/knotfest"
+           binding.textViewMainTitle.text="KNOTFEST"
+
+        }
+        binding.imageViewLollaPalooza.setOnClickListener{
+            binding.MainLayout.background
+            binding.textViewMainTitle.text="LOLLAPALOOZA"
+        }
+        binding.imageViewRockInRio.setOnClickListener {
+            //binding.MainLayout.background = "@drawable/knotfest"
+            binding.textViewMainTitle.text="ROCK IN RIO"
+        }
+
+        binding.buttonHome.setOnClickListener {
+            if(binding.textViewMainTitle.text=="KNOTFEST"){
+
+            }else if(binding.textViewMainTitle.text=="LOLLAPALOOZA"){
+
+            } else if(binding.textViewMainTitle.text=="ROCK IN RIO"){
+
+            }
         }
 
 

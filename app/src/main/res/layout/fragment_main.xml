@@ -2,9 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/MainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/image_7"
+    android:background="@drawable/knotfest"
     tools:context=".EventActivity">
 
 
@@ -22,11 +23,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView16"
-        android:layout_width="333dp"
+        android:id="@+id/textViewMainTitle"
+        android:layout_width="wrap_content"
         android:layout_height="91dp"
-        android:layout_marginTop="104dp"
-        android:text="JOHN WICK"
+        android:layout_marginTop="72dp"
+        android:text="KNOTFEST"
         android:textColor="#FFFFFF"
         android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,69 +35,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-
-        android:text="Cinema São Paulo"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="19/02/2023"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
-
     <Button
         android:id="@+id/buttonHome"
         android:layout_width="wrap_content"
         android:layout_height="43dp"
-        android:layout_marginTop="24dp"
         android:text="Ver Mais"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        tools:layout_editor_absoluteY="332dp" />
 
     <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="123dp"
-        android:layout_height="189dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="12dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView10"
+        android:id="@+id/imageViewLollaPalooza"
+        android:layout_width="126dp"
+        android:layout_height="194dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewRockInRio"
         app:layout_constraintTop_toBottomOf="@+id/buttonHome"
-        app:srcCompat="@drawable/poster_o_rei_do_show_tamanho_90x_0_cm_lo00_poster_o_rei_do_show" />
+        app:srcCompat="@drawable/lollapalooza" />
 
     <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="123dp"
-        android:layout_height="189dp"
-        android:layout_marginTop="36dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHome"
-        app:srcCompat="@drawable/poster_o_rei_do_show_tamanho_90x_0_cm_lo00_poster_o_rei_do_show" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="123dp"
-        android:layout_height="189dp"
-        android:layout_marginTop="36dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView8"
+        android:id="@+id/imageViewKnotFest"
+        android:layout_width="139dp"
+        android:layout_height="192dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewLollaPalooza"
         app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonHome"
-        app:srcCompat="@drawable/poster_o_rei_do_show_tamanho_90x_0_cm_lo00_poster_o_rei_do_show" />
+        app:srcCompat="@drawable/knotfest" />
+
+    <ImageView
+        android:id="@+id/imageViewRockInRio"
+        android:layout_width="123dp"
+        android:layout_height="189dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonHome"
+        app:srcCompat="@drawable/rock_in_rio" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
