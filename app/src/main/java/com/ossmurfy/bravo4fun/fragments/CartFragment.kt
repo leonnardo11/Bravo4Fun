@@ -75,7 +75,7 @@ class CartFragment : Fragment() {
         }
 
         //Faz a chamada a API
-        API().cart.listCart(61).enqueue(callback)
+        API().cart.listCart(57).enqueue(callback)
 
 
         //Chama uma função para habilitar o carregamento
@@ -105,7 +105,7 @@ class CartFragment : Fragment() {
                 AlertaFalha()
             }
         }
-        API().pedido.inserirPedido(61).enqueue(callback)
+        API().pedido.inserirPedido(57).enqueue(callback)
     }
 
 

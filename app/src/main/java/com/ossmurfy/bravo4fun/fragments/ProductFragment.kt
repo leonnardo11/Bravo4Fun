@@ -110,7 +110,7 @@ class ProductFragment (val idProdutoo: Int) : Fragment() {
             }
         }
 
-        API().cart.inserir(idProdutoo, 1, 61).enqueue(callback)
+        API().cart.inserir(idProdutoo, 1, 57).enqueue(callback)
 
     }
 
