@@ -29,7 +29,7 @@
         android:layout_marginTop="72dp"
         android:text="KNOTFEST"
         android:textColor="#FFFFFF"
-        android:textSize="60sp"
+        android:textSize="45sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.628"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,27 +39,18 @@
         android:id="@+id/buttonHome"
         android:layout_width="wrap_content"
         android:layout_height="43dp"
+        android:layout_marginTop="80dp"
         android:text="Ver Mais"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="332dp" />
-
-    <ImageView
-        android:id="@+id/imageViewLollaPalooza"
-        android:layout_width="126dp"
-        android:layout_height="194dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageViewRockInRio"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHome"
-        app:srcCompat="@drawable/lollapalooza" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewMainTitle" />
 
     <ImageView
         android:id="@+id/imageViewKnotFest"
         android:layout_width="139dp"
         android:layout_height="192dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="44dp"
         app:layout_constraintEnd_toStartOf="@+id/imageViewLollaPalooza"
         app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,9 +61,19 @@
         android:id="@+id/imageViewRockInRio"
         android:layout_width="123dp"
         android:layout_height="189dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="44dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonHome"
         app:srcCompat="@drawable/rock_in_rio" />
+
+    <ImageView
+        android:id="@+id/imageViewLollaPalooza"
+        android:layout_width="126dp"
+        android:layout_height="194dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewRockInRio"
+        app:layout_constraintTop_toBottomOf="@+id/buttonHome"
+        app:srcCompat="@drawable/lollapalooza" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
