@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.ossmurfy.bravo4fun.AboutActivity
 import com.ossmurfy.bravo4fun.EditProfileFragment
 import com.ossmurfy.bravo4fun.LoginActivity
 import com.ossmurfy.bravo4fun.R
@@ -31,6 +32,10 @@ class ProfileFragment : Fragment() {
         }
         binding.sairButton.setOnClickListener {
             var i = Intent(context, LoginActivity::class.java)
+            startActivity(i)
+        }
+        binding.meusPedidosButton2.setOnClickListener {
+            var i = Intent(context, AboutActivity::class.java)
             startActivity(i)
         }
 
