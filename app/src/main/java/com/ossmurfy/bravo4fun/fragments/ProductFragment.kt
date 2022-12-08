@@ -110,7 +110,7 @@ class ProductFragment (val idProdutoo: Int) : Fragment() {
             }
         }
 
-        API().cart.inserir(idProdutoo, 1, 30).enqueue(callback)
+        API().cart.inserir(idProdutoo, 1, 57).enqueue(callback)
 
     }
 
@@ -145,7 +145,7 @@ class ProductFragment (val idProdutoo: Int) : Fragment() {
     fun AlertaFalha(){
         AlertDialog.Builder(context)
             .setTitle("Falha!")
-            .setMessage("Algo de errado aconteceu no caminho. :(")
+            .setMessage("Algo de errado aconteceu no caminho.")
             .setPositiveButton("OK", null)
             .create()
             .show()

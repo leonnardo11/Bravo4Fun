@@ -110,18 +110,18 @@ class EventsFragment : Fragment() {
             //item do array
             cardBinding.textTitulo.text = it.PRODUTO_NOME
             cardBinding.textDesc.text = it.PRODUTO_DESC
-            /*if(it.PRODUTO_IMAGEM != null && it.PRODUTO_IMAGEM.isNotEmpty()){
+            if(it.PRODUTO_IMAGEM != null && it.PRODUTO_IMAGEM.isNotEmpty()){
 
 
                 var imagem = it.PRODUTO_IMAGEM[0]
 
-                //Solicita o carregamento da imagem
+
                 Picasso.get().load(
                     "$imagem"
                 ).placeholder(R.drawable.no_image).error(R.drawable.no_image)
                     .into(cardBinding.imagem)
 
-            }*/
+            }
 
             cardBinding.root.setOnClickListener { cartao ->
                 val frag = ProductFragment(it.PRODUTO_ID)
