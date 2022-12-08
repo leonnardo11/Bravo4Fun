@@ -54,14 +54,7 @@ class OrdersFragment : Fragment(){
             }
 
             override fun onFailure(call: Call<PedidoResponse>, t: Throwable) {
-                fun AlertaFalha(){
-                    AlertDialog.Builder(context)
-                        .setTitle("Falha!")
-                        .setMessage("Algo de errado aconteceu no caminho. :(")
-                        .setPositiveButton("OK", null)
-                        .create()
-                        .show()
-                }
+                alertaFalha()
             }
         }
         API().pedido.listPedidos(57).enqueue(callback)
@@ -97,6 +90,15 @@ class OrdersFragment : Fragment(){
 
     private fun habilitarCarregamento() {
         binding.swipe.isRefreshing = true
+    }
+
+    fun alertaFalha(){
+        AlertDialog.Builder(context)
+            .setTitle("Falha!")
+            .setMessage("Algo de errado aconteceu no caminho. :(")
+            .setPositiveButton("OK", null)
+            .create()
+            .show()
     }
 
 
