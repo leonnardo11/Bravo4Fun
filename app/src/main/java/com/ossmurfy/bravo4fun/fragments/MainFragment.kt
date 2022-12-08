@@ -28,21 +28,24 @@ class MainFragment : Fragment() {
 
         }
         binding.imageViewLollaPalooza.setOnClickListener{
-            binding.MainLayout.background
+            //binding.MainLayout.background = "@drawable/lollapalooza"
             binding.textViewMainTitle.text="LOLLAPALOOZA"
         }
         binding.imageViewRockInRio.setOnClickListener {
-            //binding.MainLayout.background = "@drawable/knotfest"
+            //binding.MainLayout.background = "@drawable/rock_in_rio"
             binding.textViewMainTitle.text="ROCK IN RIO"
         }
 
         binding.buttonHome.setOnClickListener {
             if(binding.textViewMainTitle.text=="KNOTFEST"){
-
+                val frag = ProductFragment(3)
+                activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.frame_layout, frag)?.commit()
             }else if(binding.textViewMainTitle.text=="LOLLAPALOOZA"){
-
+                val frag = ProductFragment(87)
+                activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.frame_layout, frag)?.commit()
             } else if(binding.textViewMainTitle.text=="ROCK IN RIO"){
-
+                val frag = ProductFragment(94)
+                activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.frame_layout, frag)?.commit()
             }
         }
 
