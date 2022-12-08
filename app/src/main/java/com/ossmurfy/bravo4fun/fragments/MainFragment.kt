@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import com.ossmurfy.bravo4fun.BottomNavigationActivity
 import com.ossmurfy.bravo4fun.R
 import com.ossmurfy.bravo4fun.databinding.FragmentMainBinding
@@ -25,14 +26,15 @@ class MainFragment : Fragment() {
 
            //binding.MainLayout.background = "@drawable/knotfest"
            binding.textViewMainTitle.text="KNOTFEST"
+           binding.MainLayout.setBackgroundDrawable(getDrawable(requireContext(), R.drawable.knotfest))
 
         }
         binding.imageViewLollaPalooza.setOnClickListener{
-            //binding.MainLayout.background = "@drawable/lollapalooza"
+            binding.MainLayout.setBackgroundDrawable(getDrawable(requireContext(), R.drawable.lollapalooza))
             binding.textViewMainTitle.text="LOLLAPALOOZA"
         }
         binding.imageViewRockInRio.setOnClickListener {
-            //binding.MainLayout.background = "@drawable/rock_in_rio"
+            binding.MainLayout.setBackgroundDrawable(getDrawable(requireContext(), R.drawable.rock_in_rio))
             binding.textViewMainTitle.text="ROCK IN RIO"
         }
 
