@@ -28,4 +28,9 @@ class API {
         get(){
             return retrofit.create(CartService::class.java)
         }
+
+    val pedido: PedidoService
+        get(){
+            return retrofit.create(PedidoService::class.java)
+        }
 }

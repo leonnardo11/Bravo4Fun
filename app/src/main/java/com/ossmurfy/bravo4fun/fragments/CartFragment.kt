@@ -1,5 +1,6 @@
 package com.ossmurfy.bravo4fun.fragments
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -13,6 +14,7 @@ import com.ossmurfy.bravo4fun.databinding.FragmentEventsBinding
 import com.ossmurfy.bravo4fun.databinding.ItemCartBinding
 import com.ossmurfy.bravo4fun.model.Cart
 import com.ossmurfy.bravo4fun.model.CartResponse
+import com.ossmurfy.bravo4fun.model.PedidoResponse
 import com.ossmurfy.bravo4fun.service.API
 import com.squareup.picasso.Picasso
 import retrofit2.Call
@@ -31,6 +33,9 @@ class CartFragment : Fragment() {
 
         binding = FragmentCartBinding.inflate(inflater)
 
+        binding.finalizar.setOnClickListener {
+            finalizaCompra()
+        }
         atualizarProdutos()
 
 
@@ -70,7 +75,7 @@ class CartFragment : Fragment() {
         }
 
         //Faz a chamada a API
-        API().cart.listCart(30).enqueue(callback)
+        API().cart.listCart(61).enqueue(callback)
 
 
         //Chama uma função para habilitar o carregamento
@@ -80,6 +85,27 @@ class CartFragment : Fragment() {
     private fun desabilitarCarregamento() {
         binding.swipe.isRefreshing = false
 
+    }
+
+    fun finalizaCompra(){
+        val callback = object : Callback<PedidoResponse>{
+            override fun onResponse(
+                call: Call<PedidoResponse>,
+                response: Response<PedidoResponse>
+            ) {
+                if (activity == null){
+                    return
+                }
+                if( response.isSuccessful){
+                    AlertaSucesso()
+                }
+            }
+
+            override fun onFailure(call: Call<PedidoResponse>, t: Throwable) {
+                AlertaFalha()
+            }
+        }
+        API().pedido.inserirPedido(61).enqueue(callback)
     }
 
 
@@ -118,6 +144,22 @@ class CartFragment : Fragment() {
         }
     }
 
+    fun AlertaSucesso(){
+        AlertDialog.Builder(context)
+            .setTitle("Sucesso!")
+            .setMessage("Compra realizada com sucesso.")
+            .setPositiveButton("OK", null)
+            .create()
+            .show()
+    }
+    fun AlertaFalha(){
+        AlertDialog.Builder(context)
+            .setTitle("Falha!")
+            .setMessage("Algo de errado aconteceu no caminho. :(")
+            .setPositiveButton("OK", null)
+            .create()
+            .show()
+    }
 
 
 
