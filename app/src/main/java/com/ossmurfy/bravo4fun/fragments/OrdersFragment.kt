@@ -37,27 +37,24 @@ class OrdersFragment : Fragment(){
     fun atualizaProdutos(){
         val callback = object : Callback<PedidoResponse> {
 
-            override fun onResponse(
-                call: Call<PedidoResponse>,
-                response: Response<PedidoResponse>
-            )
+            override fun onResponse(call: Call<PedidoResponse>, response: Response<PedidoResponse>)
             {
-                if (activity == null) {
+                if(activity == null){
                     return
                 }
                 desabilitarCarregamento()
-
                 if (response.isSuccessful){
-                    var pedidos = response.body()
+                    val pedidos = response.body()
                     atualizarUI(pedidos?.data)
                 }
             }
 
             override fun onFailure(call: Call<PedidoResponse>, t: Throwable) {
                 alertaFalha()
+                desabilitarCarregamento()
             }
         }
-        API().pedido.listPedidos(57).enqueue(callback)
+        API().pedido.listPedidos(62).enqueue(callback)
         habilitarCarregamento()
     }
 
@@ -93,9 +90,12 @@ class OrdersFragment : Fragment(){
     }
 
     fun alertaFalha(){
+        if(activity == null){
+            return
+        }
         AlertDialog.Builder(context)
             .setTitle("Falha!")
-            .setMessage("Algo de errado aconteceu no caminho. :(")
+            .setMessage("Algo de errado aconteceu no caminho.")
             .setPositiveButton("OK", null)
             .create()
             .show()

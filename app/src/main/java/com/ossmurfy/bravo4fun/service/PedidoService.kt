@@ -14,6 +14,6 @@ interface PedidoService {
     fun inserirPedido(@Header("USUARIO_ID") USUARIO_ID: Int ): Call<PedidoResponse>
 
     @GET("/api/orders")
-    fun listPedidos(@Header ("USUARIO_ID") USUARIO_ID: Int): Call<PedidoResponse>
+    fun listPedidos(@Header("USUARIO_ID") USUARIO_ID: Int): Call<PedidoResponse>
 
 }
